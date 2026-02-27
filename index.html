@@ -62,6 +62,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;  /* allow wrapping on very small screens */
+            gap: 12px;
         }
 
         /* official logo */
@@ -94,17 +96,23 @@
             font-weight: 500;
             letter-spacing: 0.2px;
         }
+
+        /* Main Website link – clearly clickable on mobile */
         .main-site-link {
             text-decoration: none;
             font-weight: 600;
             color: var(--primary-blue);
             font-size: 1rem;
             border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;  /* base padding for better tap target */
+            border-radius: 40px;  /* pill shape */
         }
         .main-site-link i {
-            margin-left: 6px;
             transition: transform 0.2s;
         }
         .main-site-link:hover {
@@ -112,6 +120,19 @@
         }
         .main-site-link:hover i {
             transform: translateX(4px);
+        }
+
+        /* On mobile, make it even more tappable with background */
+        @media (max-width: 600px) {
+            .main-site-link {
+                background: rgba(13,71,161,0.08); /* light blue background */
+                padding: 10px 16px;  /* larger tap area */
+                border-bottom: none;  /* remove underline */
+                font-size: 1rem;
+            }
+            .main-site-link:active {
+                background: rgba(13,71,161,0.15); /* feedback on tap */
+            }
         }
 
         /* ----- hero section (blue→purple gradient) ----- */
@@ -538,7 +559,8 @@
                 font-size: 1rem;
             }
             .main-site-link {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
+                padding: 8px 14px;
             }
         }
     </style>
@@ -553,7 +575,9 @@
                     SYMBIOTIC LEARNING<br><span class="logo-sub">Overseas Education Division</span>
                 </div>
             </div>
-            <a href="https://symbioticlearning.com/" class="main-site-link" target="_blank">Main Website <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://symbioticlearning.com/" class="main-site-link" target="_blank">
+                Main Website <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </header>
 
@@ -737,3 +761,4 @@
     </script>
 </body>
 </html>
+
