@@ -3,760 +3,737 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Achievements - Educational Excellence</title>
-    <!-- بسم الله الرحمن الرحيم -->
+    <title>Symbiotic Learning · overseas education</title>
+    <!-- Font Awesome 6 (free) - all solid icons for visibility -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --primary: #1b6411;
-            --accent: #10b981;
-            --bg-light: #f8fafc;
-            --dark: #1f2937;
+            --primary-blue: #0d47a1;
+            --accent-blue: #1976d2;
+            --deep-purple: #5e35b1;
+            --teal: #00897b;
+            --warm-orange: #fb8c00;
+            --soft-bg: #f4f7fb;
             --white: #ffffff;
-            --gray-600: #4b5563;
-            --light-green: #dcfce7;
-            --yellow: #fef3c7;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --shadow-sm: 0 15px 40px -12px rgba(0,0,0,0.12);
+            --shadow-hover: 0 25px 50px -12px rgba(0,0,0,0.2);
+            --border-radius-card: 24px;
         }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--soft-bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            background: var(--bg-light); 
-            color: var(--dark); 
+        /* ----- sticky header (minimal, no nav) ----- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: box-shadow 0.3s;
+        }
+        header.scrolled {
+            box-shadow: 0 8px 30px rgba(13,71,161,0.12);
+        }
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* official logo */
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            background: var(--primary-blue);
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 16px -6px rgba(13,71,161,0.3);
+        }
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        .logo-sub {
+            font-size: 0.7rem;
+            color: #4a637a;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .main-site-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+            white-space: nowrap;
+        }
+        .main-site-link i {
+            margin-left: 6px;
+            transition: transform 0.2s;
+        }
+        .main-site-link:hover {
+            border-bottom-color: var(--primary-blue);
+        }
+        .main-site-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ----- hero section (blue→purple gradient) ----- */
+        .hero {
+            background: linear-gradient(145deg, var(--primary-blue), var(--deep-purple));
+            color: white;
+            padding: 100px 24px;
+            text-align: center;
+            animation: heroFadeIn 1.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+        @keyframes heroFadeIn {
+            0% { opacity: 0; transform: translateY(24px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* section title */
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 80px 0 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--deep-purple));
+            transition: width 1s ease;
+            border-radius: 4px;
+        }
+        .section-title.reveal::after {
+            width: 100%;
+        }
+
+        /* alternating feature blocks */
+        .feature-block {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+        .feature-block.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-block.reverse {
+            direction: rtl;
+        }
+        .feature-block.reverse .feature-text {
+            direction: ltr;
+        }
+
+        /* icon + text */
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            transition: transform 0.3s;
+            box-shadow: 0 15px 25px -8px rgba(0,0,0,0.15);
+            color: white;
+        }
+        .feature-block:hover .feature-icon {
+            transform: scale(1.05) translateY(-4px);
+        }
+        .feature-text h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .feature-text p {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-bottom: 28px;
             line-height: 1.6;
         }
-
-        /* Header */
-        header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px; 
-            background: rgba(255,255,255,0.95); 
-            backdrop-filter: blur(20px);
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        header .home-link { 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: 600; 
-            padding: 10px 20px;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
+        .feature-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
             transition: all 0.3s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+        .feature-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 28px rgba(0,0,0,0.2);
         }
 
-        header .home-link:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Hero Banner */
-        .hero { 
-            position: relative; 
-            padding: 80px 20px; 
-            background: linear-gradient(135deg, var(--primary), var(--accent)); 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            color: var(--white); 
-            text-align: center;
+        .feature-image {
             overflow: hidden;
+            border-radius: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.4s;
+        }
+        .feature-block.active .feature-image {
+            transform: scale(1);
+        }
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 1.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+        .feature-block.active .feature-image img {
+            transform: scale(1.05);
+        }
+        .feature-image:hover {
+            box-shadow: var(--shadow-hover);
         }
 
-        .hero h1 { 
-            font-size: 3rem; 
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
+        /* individual feature colors */
+        .teal-bg { background: linear-gradient(145deg, #00897b, #00695c); }
+        .purple-bg { background: linear-gradient(145deg, #5e35b1, #4527a0); }
+        .blue-bg { background: linear-gradient(145deg, #1976d2, #0d47a1); }
+        .orange-bg { background: linear-gradient(145deg, #fb8c00, #f57c00); }
+        .blue-orange-bg { background: linear-gradient(145deg, #1976d2, #fb8c00); }
 
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            font-weight: 500;
-        }
-
-        /* Floating shapes */
-        .shape { 
-            position: absolute; 
-            opacity: 0.15; 
-            animation: float 6s ease-in-out infinite; 
-        }
-
-        .shape.circle { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            background: var(--accent); 
-            top: 10%; 
-            left: 10%; 
-        }
-
-        .shape.square { 
-            width: 100px; 
-            height: 100px; 
-            background: var(--white); 
-            bottom: 15%; 
-            right: 15%; 
-            border-radius: 20px;
-        }
-
-        .shape.triangle {
-            width: 0;
-            height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 80px solid var(--white);
-            top: 20%;
-            right: 10%;
-            animation-delay: -2s;
-        }
-
-        @keyframes float { 
-            0%, 100% { transform: translateY(0) rotate(0deg); } 
-            50% { transform: translateY(-20px) rotate(5deg); } 
-        }
-
-        /* Stats Section */
-        .stats {
+        /* google reviews section – simplified */
+        .reviews-section {
             background: var(--white);
-            padding: 60px 20px;
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 24px;
             text-align: center;
-            transition: transform 0.3s;
-            border-left: 4px solid var(--accent);
         }
-
-        .stat-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-icon {
+        .google-link {
+            display: inline-block;
             font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--warm-orange);
+            text-decoration: none;
+            border-bottom: 4px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+            padding: 0 10px;
+        }
+        .google-link i {
+            margin-left: 12px;
+            font-size: 2.2rem;
+            transition: transform 0.2s;
+        }
+        .google-link:hover {
+            border-bottom-color: var(--warm-orange);
+            transform: translateY(-4px);
+        }
+        .google-link:hover i {
+            transform: translateX(8px);
         }
 
-        .stat-value { 
-            font-size: 2rem; 
-            font-weight: 700; 
-            margin-bottom: 5px; 
-            color: var(--primary); 
+        /* cta section */
+        .cta-section {
+            background: linear-gradient(145deg, var(--primary-blue), var(--deep-purple));
+            color: white;
+            padding: 90px 24px;
+            text-align: center;
         }
-
-        .stat-label { 
-            font-size: 0.9rem; 
-            color: var(--gray-600); 
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
-
-        /* Main Content */
-        .section { 
-            padding: 60px 20px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
-        .year-title { 
-            font-size: 2rem; 
-            margin-bottom: 40px; 
-            color: var(--primary); 
-            text-align: center; 
-            padding: 25px;
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .cards { 
-            display: grid; 
-            gap: 30px; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-        }
-
-        .card { 
-            background: var(--white); 
-            padding: 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-            text-align: center; 
-            transition: all 0.3s;
-            border-left: 5px solid var(--accent);
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .photo { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            margin: 0 auto 20px; 
-            border: 4px solid var(--accent); 
-            background: var(--light-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .photo img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-        }
-
-        .name { 
-            font-weight: 700; 
-            margin-bottom: 15px; 
+        .cta-section p {
             font-size: 1.3rem;
-            color: var(--dark);
-        }
-
-        .school { 
-            font-size: 1rem; 
-            margin-bottom: 15px; 
-            color: var(--gray-600); 
-            background: var(--light-green);
-            padding: 8px 15px;
-            border-radius: 25px;
-            display: inline-block;
-        }
-
-        .percent { 
-            font-size: 1.8rem; 
-            font-weight: 700; 
-            color: var(--white); 
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            padding: 15px 25px;
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(27, 100, 17, 0.3);
-        }
-
-        .admission { 
-            font-size: 1rem; 
-            font-weight: 500; 
-            color: var(--accent); 
-            margin-bottom: 10px;
-            background: var(--yellow);
-            padding: 10px 15px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        .achievement-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
-            color: var(--dark);
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
-        }
-
-        /* JEE Special Layout */
-        .jee-highlight {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--white);
-            border: none;
-        }
-
-        .jee-highlight .school,
-        .jee-highlight .admission {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-        }
-
-        .jee-highlight .percent {
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        /* Two column layout for featured students */
-        .two-col { 
-            display: grid; 
-            grid-template-columns: 2fr 1fr; 
-            gap: 40px; 
-            align-items: center;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .featured-content h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .featured-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 5px solid var(--accent);
-            background: var(--light-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            margin: 0 auto;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--white);
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
             opacity: 0.9;
+            margin-bottom: 32px;
         }
-
-        .cta-button {
-            padding: 18px 40px;
-            background: var(--white);
-            color: var(--primary);
+        .cta-btn {
+            background: white;
+            color: var(--primary-blue);
             border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 16px 48px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             text-decoration: none;
             display: inline-block;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: #f0f9ff;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
-        /* Modal */
-        .modal { 
-            display: none; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh; 
-            background: rgba(0, 0, 0, 0.6); 
-            justify-content: center; 
-            align-items: center; 
-            z-index: 200; 
-            backdrop-filter: blur(5px);
+        /* footer (without social section) */
+        footer {
+            background: linear-gradient(145deg, #0a2a4a, #311b57);
+            color: #cfdfed;
+            padding: 60px 24px 30px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+        .footer-logo .logo-group {
+            color: white;
+        }
+        .footer-logo .logo-text {
+            color: white;
+        }
+        .footer-logo .logo-sub {
+            color: #9bb5d4;
+        }
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-blue);
+        }
+        .footer-contact p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #2a4060;
+            font-size: 0.9rem;
         }
 
-        .modal-content { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 20px; 
-            text-align: center; 
-            max-width: 90%; 
-            width: 400px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        /* modal popup (45s) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
         }
-
+        .modal-content {
+            background: white;
+            max-width: 450px;
+            width: 90%;
+            padding: 40px;
+            border-radius: 48px;
+            text-align: center;
+            box-shadow: 0 40px 60px rgba(0,0,0,0.4);
+            animation: modalPop 0.4s ease-out;
+        }
+        @keyframes modalPop {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
         .modal-content h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 16px;
         }
-
         .modal-content p {
-            margin-bottom: 25px;
-            color: var(--gray-600);
+            margin-bottom: 24px;
+            color: #334155;
         }
-
-        .modal-content button { 
-            margin-top: 20px; 
-            padding: 15px 30px; 
-            background: linear-gradient(135deg, var(--primary), var(--accent)); 
-            color: var(--white); 
-            border: none; 
-            border-radius: 50px; 
-            cursor: pointer; 
+        .modal-phone {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            background: #e9f0fd;
+            padding: 16px;
+            border-radius: 40px;
+            margin: 20px 0;
+        }
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .modal-btn {
+            padding: 14px 28px;
+            border-radius: 40px;
+            border: none;
             font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.3s;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .modal-btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+        .modal-btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
-        .modal-content button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .two-col { 
-                grid-template-columns: 1fr; 
-                text-align: center;
-            }
-            .cards { 
-                grid-template-columns: 1fr; 
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .featured-photo {
-                width: 150px;
-                height: 150px;
-            }
-            .cta h2 { font-size: 2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
+        /* ----- MOBILE OPTIMIZATIONS (extra breakpoint for 320-400px) ----- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; white-space: normal; }
+            .feature-block {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
-            .section {
-                padding: 40px 15px;
+            .feature-block.reverse {
+                direction: ltr;
             }
-            .card {
-                padding: 20px;
+            .feature-text h2 { font-size: 1.9rem; }
+            .google-link { font-size: 1.8rem; }
+            .google-link i { font-size: 1.6rem; }
+        }
+
+        /* very small phones (320px - 400px) */
+        @media (max-width: 400px) {
+            .hero {
+                padding: 70px 16px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+                margin: 50px 0 30px;
+            }
+            .feature-block {
+                gap: 30px;
+                margin-bottom: 70px;
+            }
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                border-radius: 20px;
+            }
+            .feature-text h2 {
+                font-size: 1.5rem;
+            }
+            .feature-text p {
+                font-size: 1rem;
+            }
+            .feature-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            .cta-section p {
+                font-size: 1rem;
+            }
+            .cta-btn {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+            .google-link {
+                font-size: 1.5rem;
+            }
+            .google-link i {
+                font-size: 1.3rem;
+            }
+            .footer-container {
+                gap: 30px;
+            }
+            .footer-contact p {
+                font-size: 0.9rem;
+            }
+            .modal-content {
+                padding: 30px 20px;
+            }
+            .modal-content h3 {
+                font-size: 1.6rem;
+            }
+            .modal-phone {
+                font-size: 1.4rem;
+                padding: 12px;
+            }
+            .modal-btn {
+                padding: 12px 20px;
+            }
+        }
+
+        /* small phones up to 480px additional tweaks */
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 12px 16px;
+            }
+            .logo-text {
+                font-size: 1rem;
+            }
+            .main-site-link {
+                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">🏆 Our Achievements</div>
-        <a href="https://your-main-website.com" class="home-link">Back to Home</a>
-    </header>
-
-    <!-- Hero Banner -->
-    <section class="hero">
-        <h1>Celebrating Academic Excellence</h1>
-        <p>Discover the outstanding achievements of our students in CBSE Board Examinations and competitive entrance tests. Every success story represents dedication, hard work, and quality education.</p>
-        <div class="hero-subtitle">✨ Inspiring Tomorrow's Leaders Today ✨</div>
-        <div class="shape circle"></div>
-        <div class="shape square"></div>
-        <div class="shape triangle"></div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">🎓</div>
-                <div class="stat-value">500+</div>
-                <div class="stat-label">Students Guided</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-value">98%</div>
-                <div class="stat-label">Success Rate</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">⭐</div>
-                <div class="stat-value">90+</div>
-                <div class="stat-label">Above 90% Marks</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-value">30+</div>
-                <div class="stat-label">School Toppers</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CBSE Class 10 Results 2025 -->
-    <section class="section" id="cbse10-2025">
-        <h2 class="year-title">🎉 CBSE Class 10 Results - 2025 (Latest Achievement)</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="achievement-badge">🏆 Top Score</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Mehreen Shaikh</div>
-                <div class="school">Indian School Seeb, Oman</div>
-                <div class="percent">96%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">⭐ Excellence</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Safiya Areej</div>
-                <div class="school">Indian School Nizwa, Oman</div>
-                <div class="percent">95%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🌟 Outstanding</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Haziq Rizvi</div>
-                <div class="school">Indian School Al Wadi Al Kabir, Muscat, Oman</div>
-                <div class="percent">94%</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JEE Main 2024 Featured -->
-    <section class="section" id="jee-2024">
-        <h2 class="year-title">🎯 JEE (Main) Result - 2024 (Overseas Division)</h2>
-        <div class="two-col">
-            <div class="featured-content">
-                <h3>Kasib Rizvi</h3>
-                <div class="school">Indian School Al Wadi Al Kabir, Muscat, Oman</div>
-                <div class="percent">Percentile: 95.8</div>
-                <div class="admission">Admission: NIT Delhi (AI & Data Science)</div>
-            </div>
-            <div class="featured-photo">🎓</div>
-        </div>
-    </section>
-
-    <!-- CBSE Class 10 Results 2024 -->
-    <section class="section" id="cbse10-2024">
-        <h2 class="year-title">📚 CBSE Class 10 Results - 2024</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="achievement-badge">🏆 Excellence</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Insha Kamran</div>
-                <div class="school">Indian School Sur, Oman</div>
-                <div class="percent">97%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">⭐ Outstanding</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Bushra Shaikh</div>
-                <div class="school">LPS Sharjah, UAE</div>
-                <div class="percent">96%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🌟 Top Score</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Aariz Ahmad</div>
-                <div class="school">The Central School Dubai, UAE</div>
-                <div class="percent">95%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🎯 Excellence</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Nabil Ahmad</div>
-                <div class="school">Indian School Seeb, Oman</div>
-                <div class="percent">95%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">⭐ Outstanding</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Abdullah Minhaj</div>
-                <div class="school">Indian School Sohar, Oman</div>
-                <div class="percent">95%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🌟 Achievement</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Syed Arsalan</div>
-                <div class="school">The Central School Dubai, UAE</div>
-                <div class="percent">93%</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CBSE Class 10 Results 2023 -->
-    <section class="section" id="cbse10-2023">
-        <h2 class="year-title">📈 CBSE Class 10 Results - 2023 (Online Coaching)</h2>
-        <div class="stats-grid" style="margin-bottom: 40px;">
-            <div class="stat-card">
-                <div class="stat-value">50%</div>
-                <div class="stat-label">Scored > 90%</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">30%</div>
-                <div class="stat-label">Scored > 80%</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">20%</div>
-                <div class="stat-label">Scored < 80%</div>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <div class="achievement-badge">🏆 Top Score</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Sana Parween</div>
-                <div class="school">Indian School Valerise, Muscat, Oman</div>
-                <div class="percent">95.8%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">⭐ Excellence</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Ayan Iqbal</div>
-                <div class="school">AK English School Muralesh, India</div>
-                <div class="percent">95%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🌟 Outstanding</div>
-                <div class="photo">👨‍🎓</div>
-                <div class="name">Athif Kalim</div>
-                <div class="school">Indian School Muscat, Oman</div>
-                <div class="percent">93.0%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🎯 Achievement</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Shayista Fatima</div>
-                <div class="school">Indian School Valerise, Muscat, Oman</div>
-                <div class="percent">92%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">⭐ Excellence</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Zainab Hafeez</div>
-                <div class="school">Indian School Seeb, Oman</div>
-                <div class="percent">91.2%</div>
-            </div>
-            <div class="card">
-                <div class="achievement-badge">🌟 Outstanding</div>
-                <div class="photo">👩‍🎓</div>
-                <div class="name">Sadiya Imran</div>
-                <div class="school">Indian School Al Wadi Al Kabir, Oman</div>
-                <div class="percent">91%</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academic Year 2022 Highlight -->
-    <section class="section" id="highlight-2022">
-        <h2 class="year-title">🌟 Academic Year 2022 Highlight</h2>
-        <div class="two-col">
-            <div class="featured-content">
-                <h3>Ramisa Parween</h3>
-                <div class="school">Indian School Al Maabela, Muscat</div>
-                <div class="percent">Overall: 94.2%</div>
-                <div class="admission">PCB: 96%</div>
-                <div style="margin-top: 15px; padding: 15px; background: var(--yellow); border-radius: 15px;">
-                    <strong>Achievements:</strong> School Topper; Among top students in Indian schools in Muscat
+    <!-- sticky header (no navigation menu) -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-group">
+                <div class="logo-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div class="logo-text">
+                    SYMBIOTIC LEARNING<br><span class="logo-sub">Overseas Education Division</span>
                 </div>
             </div>
-            <div class="featured-photo">🏆</div>
+            <a href="https://symbioticlearning.com/" class="main-site-link" target="_blank">Main Website <i class="fa-solid fa-arrow-right"></i></a>
         </div>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero">
+        <h1>Clarity in a World Full of Choices</h1>
+        <p>We are living in the age of Artificial Intelligence and endless online options. But in this flood of content, students need more than videos — they need guidance, discipline, and a system that truly cares about their growth.</p>
+    </section>
+
+    <!-- section title -->
+    <h2 class="section-title" id="sectionTitle">Why We Are Different</h2>
+
+    <!-- alternating feature blocks (all icons solid) -->
+    <div class="container">
+        <!-- 1️⃣ Personal Mentorship (Teal) -->
+        <div class="feature-block" id="feat1">
+            <div class="feature-text">
+                <div class="feature-icon teal-bg"><i class="fa-solid fa-handshake"></i></div>
+                <h2 style="color: var(--teal);">Personal Mentorship — Not Mass Teaching</h2>
+                <p>In a world of crowded online classes, students often become just another name on the screen. We believe every child deserves personal attention. We mentor, guide, and ensure no student feels invisible.</p>
+                <a href="https://symbioticlearning.com/about" class="feature-btn" style="background: linear-gradient(145deg, #00897b, #00695c);" target="_blank">Learn More About Us →</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="mentorship" loading="lazy">
+            </div>
+        </div>
+
+        <!-- 2️⃣ Real Academic Results (Deep Purple) -->
+        <div class="feature-block reverse" id="feat2">
+            <div class="feature-text">
+                <div class="feature-icon purple-bg"><i class="fa-solid fa-trophy"></i></div>
+                <h2 style="color: var(--deep-purple);">Real Academic Results</h2>
+                <p>For the last three years, our structured and tested methodology has helped students from different schooling systems, including Gulf countries, achieve measurable academic improvement.</p>
+                <a href="https://achievements.symbioticlearning.com/" class="feature-btn" style="background: linear-gradient(145deg, #5e35b1, #4527a0);" target="_blank">See Results →</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="student studying" loading="lazy">
+            </div>
+        </div>
+
+        <!-- 3️⃣ A Structured Learning Path (Blue) -->
+        <div class="feature-block" id="feat3">
+            <div class="feature-text">
+                <div class="feature-icon blue-bg"><i class="fa-solid fa-map"></i></div>
+                <h2 style="color: var(--primary-blue);">A Structured Learning Path</h2>
+                <p>No confusion. No overload. Every student follows a clear roadmap with weekly goals, revision plans, and consistent evaluation.</p>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="planning" loading="lazy">
+            </div>
+        </div>
+
+        <!-- 4️⃣ Focused & Distraction-Free Learning (Orange) -->
+        <div class="feature-block reverse" id="feat4">
+            <div class="feature-text">
+                <div class="feature-icon orange-bg"><i class="fa-solid fa-bullseye"></i></div>
+                <h2 style="color: var(--warm-orange);">Focused & Distraction-Free Learning</h2>
+                <p>We are not an entertainment platform. We provide a calm, disciplined academic environment where students stay focused on what truly matters — their future.</p>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="focused" loading="lazy">
+            </div>
+        </div>
+
+        <!-- 5️⃣ Affordable Yet High Quality (Blue+Orange) -->
+        <div class="feature-block" id="feat5">
+            <div class="feature-text">
+                <div class="feature-icon blue-orange-bg"><i class="fa-solid fa-heart"></i></div>
+                <h2 style="background: linear-gradient(145deg, var(--primary-blue), var(--warm-orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Affordable Yet High Quality</h2>
+                <p>Quality education should not be a privilege. Our value-based pricing ensures transparency and accessibility while maintaining high academic standards.</p>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="students" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Reviews section – simplified heading linked to the review page -->
+    <section class="reviews-section">
+        <a href="https://www.google.com/search?q=symbiotic+institute#mpd=~13481104329782748208/customers/reviews" target="_blank" class="google-link">
+            What Parents Say About Us <i class="fa-solid fa-arrow-right"></i>
+        </a>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <h2>Join Our Success Story</h2>
-        <p>Ready to achieve academic excellence? Let us guide your child to outstanding results like these achievers!</p>
-        <a href="https://your-main-website.com/contact" class="cta-button">🚀 Start Your Journey Today</a>
+    <section class="cta-section">
+        <h2>Ready to Build Academic Excellence?</h2>
+        <p>The right guidance today creates a stronger tomorrow.</p>
+        <a href="#" class="cta-btn">Contact Us Now</a>
     </section>
 
-    <!-- Timed Popup Modal -->
-    <div class="modal" id="promo-modal">
+    <!-- footer (without "Follow us" section) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-group">
+                    <div class="logo-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="logo-text">
+                        SYMBIOTIC LEARNING<br><span class="logo-sub">Overseas Education Division</span>
+                    </div>
+                </div>
+                <p style="margin-top:20px;">Guiding students across the globe.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-phone"></i> +91-49822922</p>
+                <p><i class="fa-solid fa-envelope"></i> info@symbioticlearning.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Begusarai, Bihar, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Symbiotic Learning. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- 45-second popup modal -->
+    <div class="modal-overlay" id="popupModal">
         <div class="modal-content">
-            <h3>🎉 Witness Excellence in Action!</h3>
-            <p>These remarkable results speak for themselves. Your child could be our next success story!</p>
-            <button onclick="location.href='https://your-main-website.com/contact'">💬 Contact Us Now</button>
+            <h3>You’ve Seen What Makes Us Different</h3>
+            <p>Now it’s time to choose the right direction. Start your journey toward academic excellence today.</p>
+            <div class="modal-phone">📞 +91-49822922</div>
+            <div class="modal-buttons">
+                <a href="tel:+9149822922" class="modal-btn modal-btn-primary">Call Now</a>
+                <button class="modal-btn modal-btn-secondary" onclick="closePopup()">Close</button>
+            </div>
         </div>
     </div>
 
     <script>
-        // Show modal after 15 seconds
-        setTimeout(() => { 
-            document.getElementById('promo-modal').style.display = 'flex'; 
-        }, 15000);
-        
-        // Close modal when clicked outside
-        document.getElementById('promo-modal').addEventListener('click', (e) => { 
-            if (e.target.id === 'promo-modal') {
-                e.target.style.display = 'none'; 
+        // Sticky header shadow
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
 
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animation to cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // IntersectionObserver for feature blocks
+        const featureBlocks = document.querySelectorAll('.feature-block');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+        featureBlocks.forEach(el => observer.observe(el));
 
-        // Observe all cards
-        document.querySelectorAll('.card, .stat-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+        // Animate section title underline
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, { threshold: 0.5 });
+        const title = document.getElementById('sectionTitle');
+        titleObserver.observe(title);
+
+        // Modal popup after 45 seconds (once per session)
+        let modalShown = false;
+        setTimeout(() => {
+            if (!modalShown) {
+                document.getElementById('popupModal').style.display = 'flex';
+                modalShown = true;
+            }
+        }, 45000);
+
+        function closePopup() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+
+        window.onclick = function(e) {
+            const modal = document.getElementById('popupModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
     </script>
 </body>
 </html>
